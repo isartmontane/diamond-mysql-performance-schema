@@ -1,4 +1,21 @@
 # coding=utf-8
+#
+# Diamond plugin to get metrics from MySQL/MariaDB Performance_Schema
+# and send them to graphite
+# 
+# It will fetch the following metrics:
+# - Number of connections per Account (host-user) - Total and current
+# - Number of connections per User - Total and current
+# - Number of connections per Host - Total and current
+# - Number of rows read per index - schema, table, index name, rows read
+# - Queries that raised errors/warnings - Query, number of executions, errors, warnings
+# - Slow queries - Query, number of executions, execution time (total,max,avg), rows sent (total, avg), scanned rows
+#
+# To make it work copy the config file to the configuration directory and edit it with
+#  the right user and password. Then copy the .py file on the collectors directory
+# 
+# Author: Isart Montane Mogas <isartmontane@gmail.com>
+# License: GPL v3
 
 """
 
